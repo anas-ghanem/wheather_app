@@ -4,7 +4,7 @@ import 'package:wheather_app/model/wheather_model.dart';
 class WeatherService {
   final Dio dio;
   final String baseurl = 'https://api.weatherapi.com/v1';
-  final String apikey = 'b07548a26e4b49f19f82312222520021';
+  final String apikey = 'b07548a26e4b49f19f8231222252002';
 
   WeatherService(this.dio);
 

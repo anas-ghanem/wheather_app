@@ -15,7 +15,6 @@ class HOME_viewr extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: const Text("Weather"),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8),

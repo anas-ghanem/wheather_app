@@ -14,6 +14,8 @@ class Wheatherinfo extends StatelessWidget {
     final gradientColors = getWeatherGradient(wheather.wheathercondition);
     final screenHeight = MediaQuery.of(context).size.height;
 
+    final topPadding = MediaQuery.of(context).padding.top + kToolbarHeight + 10;
+
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -28,7 +30,7 @@ class Wheatherinfo extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             children: [
-              SizedBox(height: screenHeight * 0.02),
+              SizedBox(height: topPadding),
               // City name & date
               _buildHeader(),
               const SizedBox(height: 20),
