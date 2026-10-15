@@ -7,23 +7,17 @@ import 'wheather_status.dart';
 
 class GetWheatherCubit extends Cubit<wheather_status> {
   GetWheatherCubit() : super(nowheather());
-   WheatherModel? wheatherModel;
+  WheatherModel? wheatherModel;
 
   getwheather({required String cityname}) async {
+    emit(wheather_loading());
     try {
-       wheatherModel = await WeatherService(
+      wheatherModel = await WeatherService(
         Dio(),
       ).getCurrentWeather(cityname: cityname);
       emit(wheather_data(wheatherModel: wheatherModel!));
     } on Exception catch (e) {
-      emit(erorr(message:e.toString()));
+      emit(erorr(message: e.toString().replaceAll('Exception: ', '')));
     }
   }
-} 
-
-// create states
-// create cubit
-// create function
-// provide cubit
-// integrate cubit
-// trigger cubit
+}
